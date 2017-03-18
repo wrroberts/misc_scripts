@@ -1,4 +1,20 @@
 #!/usr/bin/env python
+"""
+Description: Calculates mean pairwise distances between samples in a dataset from multiple
+alignments (as well as standard deviations of those distances). Both uncorrected (p)
+distances and Jukes-Cantor distances are calculated. Heterozygous sites are okay as IUPAC
+ambiguity codes and included in the calculations. 
+
+Usage:
+python mean_distance_from_alignments.py in_dir format
+
+Where in_dir is the location of your alignments, and format is "nexus", "fasta", "phylip", 
+"clustal", "emboss", "fasta-m10", "ig", "phylip-sequential", "phylip-relaxed", or 
+"stockholm".
+
+Requirements:
+BioPython - http://biopython.org/wiki/Main_Page
+"""
 
 import os
 import sys
