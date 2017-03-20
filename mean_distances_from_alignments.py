@@ -77,7 +77,7 @@ def get_dist(dict, all_samples, p_array, jc_array, nl_array, k):
                                     recognized nucleotide".format(seq_x, seq_y)
                     p_distprop = p_dist/len(seq_a)
                     jc_distprop = -0.75*math.log(1.0 - 4.0*p_distprop/3.0) # Jukes-Cantor equation
-                    nl_distprop = 1 - ((2*(1-p_dist))/len(seq_a))
+                    nl_distprop = (1.0 - 2.0*(len(seq_a)-p_dist))/(len(seq_a)+len(seq_b))
                 p_array[i,j,k] = p_distprop
                 p_array[j,i,k] = p_distprop
                 jc_array[i,j,k] = jc_distprop
